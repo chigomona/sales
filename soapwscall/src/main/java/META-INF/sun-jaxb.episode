@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+      
+    <!--
+
+此檔案是由 JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.11 所產生 
+請參閱 <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+一旦重新編譯來源綱要, 對此檔案所做的任何修改都將會遺失. 
+產生時間: 2023.03.09 於 08:21:25 AM CST 
+
+  -->
+      
+    <bindings xmlns:tns="http://ws.mona.com/" if-exists="true" scd="x-schema::tns">
+            
+        <schemaBindings map="false">
+                  
+            <package name="com.eshop.ws.schemas.math"/>
+                
+        </schemaBindings>
+            
+        <bindings if-exists="true" scd="~tns:ScriptException">
+                  
+            <class ref="com.eshop.ws.schemas.math.ScriptException"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:divideTwoNumbers">
+                  
+            <class ref="com.eshop.ws.schemas.math.DivideTwoNumbers"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:divideTwoNumbersResponse">
+                  
+            <class ref="com.eshop.ws.schemas.math.DivideTwoNumbersResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:formulaResult">
+                  
+            <class ref="com.eshop.ws.schemas.math.FormulaResult"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:formulaResultResponse">
+                  
+            <class ref="com.eshop.ws.schemas.math.FormulaResultResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:minusTwoNumbers">
+                  
+            <class ref="com.eshop.ws.schemas.math.MinusTwoNumbers"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:minusTwoNumbersResponse">
+                  
+            <class ref="com.eshop.ws.schemas.math.MinusTwoNumbersResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:multipleTwoNumbers">
+                  
+            <class ref="com.eshop.ws.schemas.math.MultipleTwoNumbers"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:multipleTwoNumbersResponse">
+                  
+            <class ref="com.eshop.ws.schemas.math.MultipleTwoNumbersResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:plusTwoNumbers">
+                  
+            <class ref="com.eshop.ws.schemas.math.PlusTwoNumbers"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:plusTwoNumbersResponse">
+                  
+            <class ref="com.eshop.ws.schemas.math.PlusTwoNumbersResponse"/>
+                
+        </bindings>
+          
+    </bindings>
+    
+</bindings>

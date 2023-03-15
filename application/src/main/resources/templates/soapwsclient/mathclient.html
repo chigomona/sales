@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Request</title>
+    <style>
+    input[type=text] {
+        width: 200px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 24px;
+        padding: 12px 20px 12px 40px;
+    }
+    input[type=button], input[type=submit], input[type=reset] {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        font-size: 24px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    </style>
+</head>
+<body>
+<form method="post" action="/mathresponse">
+    <div align="center">
+        <h1>Hello visitor, please input two numbers: </h1>
+        <h2>
+            Number one : <input type="text" name="numOne"/>
+            Number two : <input type="text" name="numTwo"/>
+        </h2>
+        <input type="submit" name="send" value="send"/>
+        <div th:if="${errorMessage != null}">
+            <hr/>
+            <h1 style="color:White;background-color:Red;"><span th:text="${errorMessage}"/></h1>
+        </div>
+        <div th:if="${numOne != null && numTwo != null}">
+            <hr/>
+            <h1>
+                Number One: <span th:text="${numOne}"/>
+                Number Two: <span th:text="${numTwo}"/><br/>
+                Plus: <span th:text="${plus}"/><br/>
+                Minus: <span th:text="${minus}"/><br/>
+                Multiple: <span th:text="${multiple}"/><br/>
+                Divide: <span th:text="${divide}"/><br/>
+            </h1>
+        </div>
+    </div>
+</form>
+</body>
+</html>
