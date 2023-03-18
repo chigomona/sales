@@ -3,12 +3,12 @@ package com.eshop.sales.model;
 import org.springframework.data.redis.core.RedisHash;
 
 @RedisHash("File")
-public class FileEntity {
-    private String id ;
-    private String name ;
-    private String ContentType ;
-    private Long size ;
-    private byte[] data ;
+public class RedisEntity {
+    private String id;
+    private String name;
+    private String ContentType;
+    private Long size;
+    private byte[] data;
 
     public String getId() {
         return id;

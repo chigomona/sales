@@ -1,8 +1,8 @@
 package com.eshop.sales.serviceimpl;
 
-import com.eshop.sales.model.FileEntity;
+import com.eshop.sales.model.RedisEntity;
 import com.eshop.sales.serviceapi.RedisService;
-import com.eshop.sales.repository.FileRepository;
+import com.eshop.sales.repository.RedisRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -16,28 +16,28 @@ import java.util.UUID;
 public class RedisServiceImpl implements RedisService {
 
 
-    private final FileRepository fileRepository;
+    private final RedisRepository redisRepository;
 
 
     @Autowired
-    public RedisServiceImpl(FileRepository fileRepository) {
-        this.fileRepository = fileRepository;
+    public RedisServiceImpl(RedisRepository redisRepository) {
+        this.redisRepository = redisRepository;
     }
 
     @Override
-    public FileEntity save(MultipartFile file) throws IOException {
-        FileEntity fileEntity = new FileEntity();
-        fileEntity.setId(UUID.randomUUID().toString());
-        fileEntity.setName(StringUtils.cleanPath(file.getOriginalFilename()));
-        fileEntity.setContentType(file.getContentType());
-        fileEntity.setData(file.getBytes());
-        fileEntity.setSize(file.getSize());
+    public RedisEntity save(MultipartFile file) throws IOException {
+        RedisEntity redisEntity = new RedisEntity();
+        redisEntity.setId(UUID.randomUUID().toString());
+        redisEntity.setName(StringUtils.cleanPath(file.getOriginalFilename()));
+        redisEntity.setContentType(file.getContentType());
+        redisEntity.setData(file.getBytes());
+        redisEntity.setSize(file.getSize());
 
-        return fileRepository.save(fileEntity);
+        return redisRepository.save(redisEntity);
     }
 
     @Override
-    public Optional<FileEntity> getFile(String id) {
-        return fileRepository.findById(id);
+    public Optional<RedisEntity> getFile(String id) {
+        return redisRepository.findById(id);
     }
 }
