@@ -3,6 +3,24 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Welcome</title>
+    <style>
+        .inline{
+           display: inline-block;
+           width: 480px;
+           height: 320px ;
+           vertical-align: top;
+           border-width:5px;
+           border-style:solid;
+           border-color:#FFAC55
+        }
+        .inline header{
+            padding: 5px;
+            text-align: center;
+            background: #1abc9c;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
 <div align="center">
@@ -14,6 +32,26 @@
         </span>
     </h3>
     <h3>It's <span th:text="${currentTime}"/> now.</h3>
+</div>
+<div align="center">
+    <div class="inline">
+        <header>Function List</header>
+        <h3 align="left">
+            <a href="/visitorsign">Visitor sign name</a></br>
+            <a href="/mathrequest">Plus, Minus, Mutiple, Divide between two numbers</a></br>
+            <a href="/fileupload">Upload files to Redis</a>
+        </h3>
+    </div>
+    <div class="inline">
+        <header>Todo List</header>
+        <h3 align="left">
+            Item 1: </br>
+            Item 2: </br>
+            Item 3: </br>
+            Item 4: </br>
+            Item 5: </br>
+        </h3>
+    </div>
 </div>
 </body>
 </html>
