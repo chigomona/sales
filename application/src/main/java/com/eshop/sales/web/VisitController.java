@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @Controller
@@ -22,8 +23,20 @@ public class VisitController {
         return "visitor/sign";
     }
 
+    @RequestMapping("/signout")
+    public String visitorsignout(HttpServletRequest request) {
+        request.getSession().removeAttribute("visitorName");
+        return "visitor/sign";
+    }
+
     @RequestMapping(value = "/welcomevisitor", method = RequestMethod.POST)
-    public String welcomevisitor(@RequestParam(value = "visitorname") String visitorName, Model model) {
+    public String welcomevisitor(HttpServletRequest request,
+            @RequestParam(value = "visitorname") String visitorName, Model model) {
+        if (visitorName!=null && !visitorName.isEmpty()) {
+            request.getSession().setAttribute("visitorName", visitorName);
+        }else{
+            return "visitor/sign" ;
+        }
         VisitRecord lastVisit = visitService.findLastVisit(visitorName);
         long visitCount = visitService.countVisitTimes(visitorName);
         VisitRecord currentVisit = visitService.createVisitRecord(visitorName) ;
